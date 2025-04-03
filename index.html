@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Bookstore</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  
+  
+  <div class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Book Categories</a></li>
+      <li><a href="#">Upcoming Events</a></li>
+      <li><a href="registration.html">Register</a></li>
+    </ul>
+  </div>
+
+ 
+  <section class="main-section">
+    <h1>Welcome to Our Online Bookstore</h1>
+
+    <div class="content">
+      
+      <div class="section">
+        <h2>Book Categories</h2>
+        <div class="category-list">
+          <div class="category-item">
+            <h3>Fiction</h3>
+            <p>Explore captivating novels and stories.</p>
+          </div>
+          <div class="category-item">
+            <h3>Non-Fiction</h3>
+            <p>Learn with insightful books on real-life topics.</p>
+          </div>
+          <div class="category-item">
+            <h3>Children's Books</h3>
+            <p>Fun and educational books for young readers.</p>
+          </div>
+          <div class="category-item">
+            <h3>Science & Technology</h3>
+            <p>Get the latest books on tech, innovation, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="section">
+        <h2>Upcoming Events</h2>
+        <p>Join us for the annual Book Fair on May 10, 2025! Explore new releases, meet authors, and more.</p>
+      </div>
+
+      
+      <div class="section">
+        <h2><a href="registration.html" class="cta-button">Register Now</a></h2>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="blinking-text">
+    <a href="registration.html">Register Now!</a>
+  </div>
+
+ 
+  <div class="countdown-container">
+    <h3>Upcoming Library Annual Day</h3>
+    <div id="countdown"></div> 
+  </div>
+
+  <script>
+    
+    function startCountdown() {
+      var targetDate = new Date("2025-12-25T00:00:00Z").getTime(); 
+
+      var countdownInterval = setInterval(function() {
+        var currentDate = new Date().getTime(); 
+        var timeRemaining = targetDate - currentDate; 
+
+        
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        
+        if (timeRemaining < 0) {
+          clearInterval(countdownInterval); 
+          document.getElementById("countdown").innerHTML = "Event has started!";
+        }
+      }, 1000); 
+    }
+
+    
+    window.onload = function() {
+      startCountdown();
+    };
+  </script>
+
+ 
+  <footer>
+    <p>Follow us on social media</p>
+    <div class="social-links">
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
